@@ -1,4 +1,4 @@
-## Exercise 6: Configure MFA
+## Exercise 7 (Optional): Configure MFA
 
 Duration:
 
