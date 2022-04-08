@@ -1,4 +1,4 @@
-# Exercise 9: Configure MFA
+# Exercise 7 (Optional): Configure MFA
 
 [Previous Challenge](./00-xxx.md) - **[Home](../readne.md)** - [Next Challenge](./xxx.md)
 
