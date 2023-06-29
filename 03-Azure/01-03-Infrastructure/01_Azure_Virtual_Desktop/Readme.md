@@ -33,6 +33,11 @@ In this hack you will learn how to set up a Azure Virtual Desktop in a typical s
 - Challenge 11: Monitoring
 - Challenge 12: Advanced Security
 - Challenge 13: MSIX App Attach
+- Challenge 14: Device Management w/ Intune
+- Challenge 15: RDP Shortpath public
+
+  **MODULES**
+- Basis Challenges / Modules ** DELETE PRE RELEASE **
 
 ## Prerequisites
 
