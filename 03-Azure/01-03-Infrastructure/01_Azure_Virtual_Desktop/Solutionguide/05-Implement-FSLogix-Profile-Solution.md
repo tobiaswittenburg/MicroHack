@@ -14,7 +14,7 @@ The Azure Virtual Desktop service recommends FSLogix profile containers as a use
 | Description | Links |
 | Create a storage account | https://learn.microsoft.com/en-us/azure/storage/common/storage-account-create?tabs=azure-portal |
 | Create an Azure file share | https://learn.microsoft.com/en-us/azure/storage/files/storage-how-to-create-file-share?tabs=azure-portal |
-|Create a profile container with Azure Files and Azure Active Directory   |  https://learn.microsoft.com/en-us/azure/virtual-desktop/create-profile-container-azure-ad  | 
+|Create a profile container with Azure Files and Azure Active Directory (Microsoft Entra ID)   |  https://learn.microsoft.com/en-us/azure/virtual-desktop/create-profile-container-azure-ad  | 
 | Circumvent port 445 issues | https://learn.microsoft.com/en-us/azure/storage/files/storage-files-networking-overview#azure-networking |
   |              |            | 
 
@@ -73,9 +73,9 @@ You can get this information from your domain admin or from an on-premises AD-jo
 
 ![Create Storage account](../Images/03-FSLogix_create-storage-account-8.png)
 
-Now comes a very important step for which you need at least the **Cloud Application Administrator** role for your tenant. You could also ask a **Global Admin** within your organization to perform this one-time task to finish the Azure AD Kerberos setup.
+Now comes a very important step for which you need at least the **Cloud Application Administrator** role for your tenant. You could also ask a **Global Admin** within your organization to perform this one-time task to finish the Microsoft Entra ID Kerberos setup.
 
-Navigate to the **App Registrations** in the **Azure AD** management overview. Switch to **All Applications** and find an app registration which starts with **[Storage Account]Storageaccountname.file.core.windows.net**.
+Navigate to the **App Registrations** in the **Microsoft Entra ID** management overview. Switch to **All Applications** and find an app registration which starts with **[Storage Account]Storageaccountname.file.core.windows.net**.
 
 ![Create Storage account](../Images/03-FSLogix_create-storage-account-16.png)
 
@@ -101,8 +101,8 @@ To assign users access permissions:
 
 ![Create Storage account](../Images/03-FSLogix_create-storage-account-11.png)
 
-- For Assign access to, select **Azure Active Directory user, group, or service principal**.
-- **Select a name or email address for the target Azure Active Directory identity**.
+- For Assign access to, select **Microsoft Entra ID user, group, or service principal**.
+- **Select a name or email address for the target Microsoft Entra ID identity**.
 - Select **Save**.
 
 ![Create Storage account](../Images/03-FSLogix_create-storage-account-12.png)
