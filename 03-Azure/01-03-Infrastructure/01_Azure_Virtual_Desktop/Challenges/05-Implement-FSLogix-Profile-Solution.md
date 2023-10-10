@@ -16,7 +16,7 @@ As a prerequisite for this Microhack, you've already set up hybrid identities. T
 
 ### Task 1: Set up an Azure Storage account
 - Setup an Azure Storage account and a File Share
-- enable Azure Active Directory authentication for Azure files
+- enable Microsoft Entra ID authentication for Azure files
     
 ### Task 2: Assign access permissions to an identity
 - AVD users will nedd access permissions to access the file share. You need to assign each user a role with 
