@@ -55,7 +55,7 @@ Once complete, select **Next: Virtual Machines**.
 
 9.  On the Create a host pool page, select **Create**.
 
-> **Note**: If you are trying to access your virtual desktop from Windows devices or other devices that are not connected to Azure AD, add **targetisaadjoined:i:1** as a custom RDP property to the host pool. [More information here](https://learn.microsoft.com/en-us/azure/virtual-desktop/deploy-azure-ad-joined-vm#access-azure-ad-joined-vms)
+> **Note**: If you are trying to access your virtual desktop from Windows devices or other devices that are not connected to Microsoft Entra ID, add **targetisaadjoined:i:1** as a custom RDP property to the host pool. [More information here](https://learn.microsoft.com/en-us/azure/virtual-desktop/deploy-azure-ad-joined-vm#access-azure-ad-joined-vms)
 
 
 ## Task2: Assign user access to host pool
@@ -67,7 +67,7 @@ After you've created your host pool, you must assign users access to the desktop
 2. **optional** Assign your users the Virtual Machine User Login role so they can sign in to the VMs.
 
 3. **optional** Assign administrators who need local administrative privileges the Virtual Machine Administrator Login role.
-To grant users access to Azure AD-joined VMs, you must [configure role assignments for the VM](https://docs.microsoft.com/en-us/azure/active-directory/devices/howto-vm-sign-in-azure-ad-windows#configure-role-assignments-for-the-vm). 
+To grant users access to Microsoft Entra ID-joined VMs, you must [configure role assignments for the VM](https://docs.microsoft.com/en-us/azure/active-directory/devices/howto-vm-sign-in-azure-ad-windows#configure-role-assignments-for-the-vm). 
 
 
 ## Task 3: Create Remote Apps
@@ -130,4 +130,4 @@ Click **Next: Workspace**
 
 Next, start your Remote Desktop Client App, refresh the AVD Workspace and launch the Notepad++ application.
 
-> **Note**: If you are trying to access your virtual desktop from Windows devices or other devices that are not connected to Azure AD, add **targetisaadjoined:i:1** as a custom RDP property to the host pool. [More information here](https://learn.microsoft.com/en-us/azure/virtual-desktop/deploy-azure-ad-joined-vm#access-azure-ad-joined-vms)
+> **Note**: If you are trying to access your virtual desktop from Windows devices or other devices that are not connected to Microsoft Entra ID, add **targetisaadjoined:i:1** as a custom RDP property to the host pool. [More information here](https://learn.microsoft.com/en-us/azure/virtual-desktop/deploy-azure-ad-joined-vm#access-azure-ad-joined-vms)
