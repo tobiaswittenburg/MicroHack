@@ -75,9 +75,9 @@ The name of the Workspace is displayed when the user signs in. Available resourc
 
 6.  Select **Save**.
 
-## Task 3: Assign an Azure AD User to the desktop application group
+## Task 3: Assign an Microsoft Entra ID User to the desktop application group
 
-In the new Azure Virtual Desktop ARM portal, we now can use Azure Active Directory groups to manage access to our host pools.
+In the new Azure Virtual Desktop ARM portal, we now can use Microsoft Entra ID groups to manage access to our host pools.
 
 1.  Sign in to the [Azure Portal](https://portal.azure.com/).
 
@@ -93,7 +93,7 @@ In the new Azure Virtual Desktop ARM portal, we now can use Azure Active Directo
 
     ![This image shows where to find manage in the menu and select assignments and add.](../Images/01-addassignments.png)
 
-6.  In the fly out, enter **AAD Username or AAD Group** in the search to find the name of your Azure AD group. In this exercise we will select **Alex Wilber**.
+6.  In the fly out, enter **AAD Username or AAD Group** in the search to find the name of your Microsoft Entra ID group. In this exercise we will select **Alex Wilber**.
 
     ![In this image, you can view the groups that you need to select and save.](../Images/01-avdpooleduseradd.png "Add Pooled Desktop user")
 
@@ -117,4 +117,4 @@ With the assignment added, you can move on to the resource group and configure t
 
 With this assignment you now can test the first connection to your AVD session host.
 
-> **Note**: If you are trying to access your virtual desktop from Windows devices or other devices that are not connected to Azure AD, add **targetisaadjoined:i:1** as a custom RDP property to the host pool. [More information here](https://learn.microsoft.com/en-us/azure/virtual-desktop/deploy-azure-ad-joined-vm#access-azure-ad-joined-vms)
+> **Note**: If you are trying to access your virtual desktop from Windows devices or other devices that are not connected to Microsoft Entra ID, add **targetisaadjoined:i:1** as a custom RDP property to the host pool. [More information here](https://learn.microsoft.com/en-us/azure/virtual-desktop/deploy-azure-ad-joined-vm#access-azure-ad-joined-vms)
