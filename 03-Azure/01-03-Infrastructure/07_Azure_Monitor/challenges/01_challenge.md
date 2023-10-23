@@ -59,7 +59,7 @@ Check if the `AMA` was installed  on the virtal machine blade under "Extensions 
 
 Check if the `AMA` was installed  on the virtal machine blade under "Extensions & applications"
 
-### *[Optional]* Taks 3: Install Azure Monitoring Agent (AMA) on Linux Vitual Machine Scale Set automatically with Azure Policy
+### *[Optional]* Task 3: Install Azure Monitoring Agent (AMA) on Linux Vitual Machine Scale Set automatically with Azure Policy
 
 > :warning: **RBAC and Permissions Requirement**: Based on the policy definition, it requires managed identity to have “Contributor” and “User Access Administrator” role on **subscription level** to execute the remediation task for Policy `Assign Built-In User-Assigned Managed Identity to Virtual Machine Scale Sets`.
 
