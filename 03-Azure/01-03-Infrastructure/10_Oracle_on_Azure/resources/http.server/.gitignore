@@ -1,0 +1,28 @@
+# Terraform files to ignore
+*.NOTES.md
+**/.ssh/
+**/tfplan*
+# Terraform files to ignore
+**/*.tfstate
+**/*.tfstate.*
+**/*.tfvars
+**/*.tfvars.json
+**/.terraform/
+**/.terraform.lock.hcl
+**/crash.log
+**/override.tf
+**/override.tf.json
+**/*_override.tf
+**/*_override.tf.json
+
+# Node.js files to ignore
+**/node_modules/
+**/npm-debug.log
+**/yarn-error.log
+**/.env
+**/.DS_Store
+**/dist/
+**/build/
+**/coverage/
+**/logs/
+**/*.log
