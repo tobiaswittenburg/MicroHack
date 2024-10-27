@@ -15,11 +15,11 @@ In this microhack you will solve a common challenge for companies migrating to t
 The participants will learn how to:
 
 1. Perform a pre-migration assessment of the databases looking at size, database engine type, database version, etc.
-1. Use offline tools to copy the databases to Azure OSS databases
-1. Use the Azure Database Migration Service to perform an online migration (if applicable)
-1. Do cutover and validation to ensure the application is working properly with the new configuration
-1. Use a private endpoint for Azure OSS databases instead of a public IP address for the database
-1. Configure a read replica for the Azure OSS databases
+2. Use offline tools to copy the databases to Azure OSS databases
+3. Use the Azure Database Migration Service to perform an online migration (if applicable)
+4. Do cutover and validation to ensure the application is working properly with the new configuration
+5. Use a private endpoint for Azure OSS databases instead of a public IP address for the database
+6. Configure a read replica for the Azure OSS databases
 
 ## Challenges
 - Challenge 0: **[Pre-requisites - Setup Environment and Prerequisites!](Student/00-prereqs.md)**

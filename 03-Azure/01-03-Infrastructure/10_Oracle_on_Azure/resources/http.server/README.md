@@ -7,9 +7,10 @@ az login
 $prefix="cptdazoracle"
 $location="germanywestcentral"
 $vmAdminUsername="chpinoto"
+# move into the corresponding directory if not already there
+cd .\03-Azure\01-03-Infrastructure\10_Oracle_on_Azure\resources\http.server\azure\
 
 # Create SSH key pair
-cd .\azure
 mkdir .\.ssh
 $sshKeyPath="./.ssh/${prefix}_id_rsa"
 ssh-keygen -m PEM -t RSA -C "chpinoto@$prefix RSA" -f $sshKeyPath -N "demo!pass123"
@@ -45,24 +46,25 @@ terraform show
 # Append new SSH connection to the .ssh config file
 $currentPath = Get-Location
 $sshPrivateKeyPath = "$currentPath\.ssh\${prefix}_id_rsa"
-$linVmFqdn = az network public-ip show -g $prefix -n ${prefix}linvm --query "dnsSettings.fqdn" --output tsv
-nslookup $linVmFqdn # will return the IP address if set to static in azure
+$nodejsVmFqdn = az network public-ip show -g $prefix -n ${prefix}nodejs --query "dnsSettings.fqdn" --output tsv
+nslookup $nodejsVmFqdn # will return the IP address if set to static in azure
 # Create the SSH config entry
 $sshConfigEntry = @"
-Host cptdazoraclelinvm
-    HostName $linVmFqdn
+Host ${prefix}nodejs
+    HostName $nodejsVmFqdn
     User $vmAdminUsername
     IdentityFile $sshPrivateKeyPath
 "@
 
 # Append the entry to the SSH config file
+$sshConfigPath = Join-Path -Path $env:USERPROFILE -ChildPath ".ssh\config"
 Add-Content -Path $sshConfigPath -Value $sshConfigEntry
 # SSH into the remote VM
-ssh chpinoto@cptdazoraclelinvm.germanywestcentral.cloudapp.azure.com -i $sshPrivateKeyPath -vvv
+ssh chpinoto@$nodejsVmFqdn -i $sshPrivateKeyPath -vvv
 
 # Open the remote SSH connection in VS Code
 # based on https://code.visualstudio.com/docs/remote/troubleshooting#_connect-to-a-remote-host-from-the-terminal
-code --remote ssh-remote+cptdazoraclelinvm
+code --remote ssh-remote+${prefix}nodejs
 ~~~
 
 ## Misc
