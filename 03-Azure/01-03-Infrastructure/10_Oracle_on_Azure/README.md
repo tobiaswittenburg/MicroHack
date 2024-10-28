@@ -45,5 +45,14 @@ The participants will learn how to:
 - `../Student/Resources`
    - Pizzeria application environment setup
 
+## Licensing Oracle Database and software on Azure
+Microsoft Azure is an authorized cloud environment for running Oracle Database. The Oracle Core Factor table isn't applicable when licensing Oracle databases in the cloud. Instead, when using VMs with Hyper-Threading Technology enabled for Enterprise Edition databases, count two vCPUs as equivalent to one Oracle Processor license if hyperthreading is enabled, as stated in the policy document. The policy details can be found at Licensing Oracle Software in the Cloud Computing Environment.
+
+Oracle databases generally require higher memory and I/O. For this reason, we recommend Memory Optimized VMs for these workloads. To optimize your workloads further, we recommend Constrained Core vCPUs for Oracle Database workloads that require high memory, storage, and I/O bandwidth, but not a high core count.
+
+When you migrate Oracle software and workloads from on-premises to Microsoft Azure, Oracle provides license mobility as stated in Oracle and Microsoft Strategic Partnership FAQ.
+
+[Offical Azure Documentation](https://learn.microsoft.com/en-us/azure/virtual-machines/workloads/oracle/oracle-vm-solutions#licensing-oracle-database-and-software-on-azure)
+
 ## Contributors
 

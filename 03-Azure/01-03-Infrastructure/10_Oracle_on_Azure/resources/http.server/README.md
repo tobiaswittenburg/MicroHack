@@ -105,9 +105,15 @@ Then run the following command to reload the profile.
 . $PROFILE
 ~~~
 
-### Git 
+### Git
 
 ~~~pwsh
+git branch
+$branchName = "init-nodejs-app"
 git status
-git add
+git reset
+git add .
+git add ../README.md
+git commit -m "add test oracle linux vm"
+git push origin $branchName
 ~~~

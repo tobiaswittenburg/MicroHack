@@ -28,6 +28,22 @@ resource "azurerm_network_interface" "nic_oracle" {
   }
 }
 
+resource "azurerm_managed_disk" "data_disk_oracle" {
+  name                 = "${local.oracle_server}datadisk"
+  location             = azurerm_resource_group.rg.location
+  resource_group_name  = azurerm_resource_group.rg.name
+  storage_account_type = "StandardSSD_LRS"
+  create_option        = "Empty"
+  disk_size_gb         = 128
+}
+
+resource "azurerm_virtual_machine_data_disk_attachment" "data_disk_attachment_oracle" {
+  managed_disk_id    = azurerm_managed_disk.data_disk_oracle.id
+  virtual_machine_id = azurerm_virtual_machine.vm_oracle.id
+  lun                = 1
+  caching            = "ReadWrite"
+}
+
 resource "azurerm_virtual_machine" "vm_oracle" {
   name                  = local.oracle_server
   location              = azurerm_resource_group.rg.location
@@ -51,6 +67,15 @@ resource "azurerm_virtual_machine" "vm_oracle" {
     offer     = "oracle-database-19-3"
     sku       = "oracle-database-19-0904"
     version   = "latest"
+  }
+
+  storage_data_disk {
+    name              = local.oracle_server
+    lun               = 0
+    caching           = "ReadWrite"
+    create_option     = "Empty"
+    disk_size_gb      = 64
+    managed_disk_type = "StandardSSD_LRS"
   }
 
   os_profile {
@@ -77,7 +102,33 @@ resource "azurerm_virtual_machine" "vm_oracle" {
   }
 }
 
-# resource "azurerm_virtual_machine_extension" "install_oracle_db" {
+# resource "azurerm_virtual_machine_extension" "mount_data_disk" {
+#   name                 = "MountDataDisk"
+#   virtual_machine_id   = azurerm_virtual_machine.vm_oracle.id
+#   publisher            = "Microsoft.Azure.Extensions"
+#   type                 = "CustomScript"
+#   type_handler_version = "2.1"
+
+#   settings = <<SETTINGS
+#     {
+#         "commandToExecute": "sudo mkfs -t ext4 /dev/sdc && sudo mkdir -p /mnt/datadisk && sudo mount /dev/sdc /mnt/datadisk && sudo chmod 777 /mnt/datadisk"
+#     }
+#   SETTINGS
+# }
+
+resource "azurerm_virtual_machine_extension" "install_github" {
+  name                 = "InstallGitHub"
+  virtual_machine_id   = azurerm_virtual_machine.vm_oracle.id
+  publisher            = "Microsoft.Azure.Extensions"
+  type                 = "CustomScript"
+  type_handler_version = "2.1"
+
+  settings = <<SETTINGS
+    {
+        "commandToExecute": "sudo yum install -y git"
+    }
+  SETTINGS
+}
 #   name                 = "InstallOracleDB"
 #   virtual_machine_id   = azurerm_virtual_machine.vm_oracle.id
 #   publisher            = "Microsoft.Azure.Extensions"
