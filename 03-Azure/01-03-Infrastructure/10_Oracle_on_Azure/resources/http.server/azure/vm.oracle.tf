@@ -47,9 +47,9 @@ resource "azurerm_virtual_machine" "vm_oracle" {
   }
   # https://documentation.ubuntu.com/azure/en/latest/azure-how-to/instances/find-ubuntu-images/
   storage_image_reference {
-    publisher = "Canonical"
-    offer     = "ubuntu-24_04-lts"
-    sku       = "server"
+    publisher = "Oracle"
+    offer     = "oracle-database-19-3"
+    sku       = "oracle-database-19-0904"
     version   = "latest"
   }
 
@@ -77,20 +77,20 @@ resource "azurerm_virtual_machine" "vm_oracle" {
   }
 }
 
-resource "azurerm_virtual_machine_extension" "install_oracle_db" {
-  name                 = "InstallOracleDB"
-  virtual_machine_id   = azurerm_virtual_machine.vm_oracle.id
-  publisher            = "Microsoft.Azure.Extensions"
-  type                 = "CustomScript"
-  type_handler_version = "2.1"
+# resource "azurerm_virtual_machine_extension" "install_oracle_db" {
+#   name                 = "InstallOracleDB"
+#   virtual_machine_id   = azurerm_virtual_machine.vm_oracle.id
+#   publisher            = "Microsoft.Azure.Extensions"
+#   type                 = "CustomScript"
+#   type_handler_version = "2.1"
 
-  settings = <<SETTINGS
-    {
-        "fileUris": ["https://path-to-your-script/install_oracle_db.sh"],
-        "commandToExecute": "./install_oracle_db.sh"
-    }
-  SETTINGS
-}
+#   settings = <<SETTINGS
+#     {
+#         "fileUris": ["https://path-to-your-script/install_oracle_db.sh"],
+#         "commandToExecute": "./install_oracle_db.sh"
+#     }
+#   SETTINGS
+# }
 
 # resource "azurerm_virtual_machine_extension" "load_nyc_taxi_data" {
 #   name                 = "LoadNYCTaxiData"
