@@ -104,3 +104,10 @@ Then run the following command to reload the profile.
 ~~~pwsh
 . $PROFILE
 ~~~
+
+### Git 
+
+~~~pwsh
+git status
+git add
+~~~
