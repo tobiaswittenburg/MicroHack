@@ -62,21 +62,28 @@ resource "azurerm_virtual_machine" "vm_oracle" {
     managed_disk_type = "Standard_LRS"
   }
   # https://documentation.ubuntu.com/azure/en/latest/azure-how-to/instances/find-ubuntu-images/
+  # storage_image_reference {
+  #   publisher = "Oracle"
+  #   offer     = "oracle-database-19-3"
+  #   sku       = "oracle-database-19-0904"
+  #   version   = "latest"
+  # }
+
   storage_image_reference {
     publisher = "Oracle"
-    offer     = "oracle-database-19-3"
-    sku       = "oracle-database-19-0904"
+    offer     = "Oracle-Linux"
+    sku       = "ol94-lvm-gen2"
     version   = "latest"
   }
 
-  storage_data_disk {
-    name              = local.oracle_server
-    lun               = 0
-    caching           = "ReadWrite"
-    create_option     = "Empty"
-    disk_size_gb      = 64
-    managed_disk_type = "StandardSSD_LRS"
-  }
+  # storage_data_disk {
+  #   name              = local.oracle_server
+  #   lun               = 0
+  #   caching           = "ReadWrite"
+  #   create_option     = "Empty"
+  #   disk_size_gb      = 64
+  #   managed_disk_type = "StandardSSD_LRS"
+  # }
 
   os_profile {
     computer_name  = local.oracle_server
@@ -101,6 +108,20 @@ resource "azurerm_virtual_machine" "vm_oracle" {
     environment = var.environment_tag
   }
 }
+
+# resource "azurerm_virtual_machine_extension" "install_docker_oracle_db_express" {
+#   name                 = "MountDataDisk"
+#   virtual_machine_id   = azurerm_virtual_machine.vm_oracle.id
+#   publisher            = "Microsoft.Azure.Extensions"
+#   type                 = "CustomScript"
+#   type_handler_version = "2.1"
+
+#   settings = <<SETTINGS
+#     {
+#         "commandToExecute": "yum install -y yum-utils && yum-config-manager –enable ol7_addons && yum install -y docker-engine && systemctl start docker && systemctl enable docker && usermod -aG docker opc && $ yum install -y git && $ git clone https://github.com/oracle/docker-images.git"
+#     }
+#   SETTINGS
+# }
 
 # resource "azurerm_virtual_machine_extension" "mount_data_disk" {
 #   name                 = "MountDataDisk"
@@ -129,6 +150,7 @@ resource "azurerm_virtual_machine_extension" "install_github" {
     }
   SETTINGS
 }
+
 #   name                 = "InstallOracleDB"
 #   virtual_machine_id   = azurerm_virtual_machine.vm_oracle.id
 #   publisher            = "Microsoft.Azure.Extensions"

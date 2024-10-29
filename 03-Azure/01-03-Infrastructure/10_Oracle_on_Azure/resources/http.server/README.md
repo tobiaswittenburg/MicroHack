@@ -81,6 +81,19 @@ code --remote ssh-remote+${prefix}oracle
 
 ## Misc
 
+### Host key has changed Error Message
+The error message "Host key for <prefix>.germanywestcentral.cloudapp.azure.com has changed and you have requested strict checking" indicates that the SSH host key for the specified host has changed, and SSH is refusing to connect because of strict host key checking.
+
+To fix this issue, you need to remove the old host key from the known hosts file and then attempt to connect again. Here are the steps to do this:
+
+~~~pwsh
+$nodejsVmFqdn = az network public-ip show -g $prefix -n ${prefix}nodejs --query "dnsSettings.fqdn" --output tsv
+$oracleVmFqdn = az network public-ip show -g $prefix -n ${prefix}oracle --query "dnsSettings.fqdn" --output tsv
+
+$knownHostsPath = Join-Path -Path $env:USERPROFILE -ChildPath ".ssh\known_hosts"
+ssh-keygen -R $oracleVmFqdn -f $knownHostsPath
+~~~
+
 ### How to shorten the powershell terminal path
 
 ~~~pwsh
@@ -103,6 +116,16 @@ Then run the following command to reload the profile.
 
 ~~~pwsh
 . $PROFILE
+~~~
+
+### Oracle DB
+
+~~~pwsh
+# How to find the lates Oracle DB image at azure
+
+~~~pwsh
+# How to find the latest Oracle Linux image at Azure filtered by Offer Oracle-Linux
+az vm image list -l germanywestcentral --publisher oracle --architecture x64 --offer Oracle-Linux --output table --all
 ~~~
 
 ### Git

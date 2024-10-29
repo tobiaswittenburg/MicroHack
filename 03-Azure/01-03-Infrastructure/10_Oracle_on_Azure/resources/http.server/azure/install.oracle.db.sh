@@ -1,5 +1,37 @@
 #!/bin/bash
 
+sudo su -
+# list mount points
+df -h
+
+# list the disks
+lsblk
+ls -alt /dev/sd*|head -1 # result: /dev/sdb1
+# create a disk label
+parted /dev/sdb1 mklabel gpt
+parted -a optimal /dev/sdb1 mkpart primary 0GB 64GB
+parted /dev/sdb1 print
+mkfs -t ext4 /dev/sdb1
+mkdir /u02
+mount /dev/sdb1 /u02
+chmod 777 /mnt/resource
+curl ifconfig.io
+echo "4.185.63.90 cptdazoracleoracle.germanywestcentral.cloudapp.azure.com cptdazoracleoracle" >> /etc/hosts
+cat /etc/hostname # cptdazoracleoracle
+sed -i 's/$/\.germanywestcentral\.cloudapp\.azure\.com &/' /etc/hostname
+cat /etc/hostname # cptdazoracleoracle.germanywestcentral.cloudapp.azure.com 
+firewall-cmd --zone=public --add-port=1521/tcp --permanent
+firewall-cmd --zone=public --add-port=5502/tcp --permanent
+firewall-cmd --reload
+# create DB
+sudo su - oracle
+lsnrctl start
+lsnrctl stop
+# Create a data directory for the Oracle data files:
+mkdir /mnt/resource/oradata
+
+
+
 # Update and install necessary packages
 sudo apt-get update
 sudo apt-get install -y wget unzip libaio1
