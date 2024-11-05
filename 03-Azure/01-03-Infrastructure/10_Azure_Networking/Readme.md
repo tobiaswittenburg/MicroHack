@@ -7,20 +7,22 @@
 - [**Objectives**](#objectives)
 - [**MicroHack Challenges**](#microhack-challenges)
 - [**Contributors**](#contributors)
+
 # MicroHack introduction
 
-This MicroHack scenario walks through the use of ... with a focus on the best practices and the design principles. Specifically, this builds up to include working with an existing infrastructure.
+This MicroHack scenario walks through the use of Azure Networking with a focus on the best practices and the design principles. Specifically, this builds up to include working with an existing infrastructure.
 
-![image](Path to the high level architecture )
+![image](Path to the high level architecture)
 
-This lab is not a full explanation of .... as a technology, please consider the following articles required pre-reading to build foundational knowledge.
+This lab is not a full explanation of Azure Networking as a technology, please consider the following articles required pre-reading to build foundational knowledge.
 
 Optional (read this after completing this lab to take your learning even deeper!)
 
 Describe the scenario here...
 
 # MicroHack context
-This MicroHack scenario walks through the use of....
+
+This MicroHack scenario walks through the use of Azure Networking in various contexts, demonstrating practical applications and integrations.
 
 # Objectives
 
