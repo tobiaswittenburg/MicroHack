@@ -1,0 +1,26 @@
+# N-tier Application Deployment
+
+## 1. Initialize the Templates for the N-tier Application
+Use the Awesome Azure Developer CLI to initialize.
+
+```bash
+azd auth login
+```
+
+```bash
+azd init --template Azure-Samples/todo-python-mongo-swa-func
+```
+
+## 2. Deploy the N-tier Application
+Use the Awesome Azure Developer CLI to deploy the N-tier application.
+
+```bash
+azd up
+```
+
+Use the Awesome Azure Developer CLI to check the status of your deployment.
+
+## 3. Access the Application
+Retrieve the URL of the deployed application and open it in your web browser.
+
+**| [< Microhack Overview](../README.md) | [Challenge 1 >](../3-RELIABILITY/README.md) |**

@@ -1,0 +1,43 @@
+# 🚀 Deploying a Ready-to-Go N-tier App with Awesome Azure Developer CLI
+
+## Introduction
+This guide will walk you through deploying a ready-to-go N-tier application using the Awesome Azure Developer CLI and Azure Copilot. We will cover how to calculate composite SLAs, enhance monitoring with alerts, logging, and Kusto queries, simulate failures/load testing with Azure Chaos Studio, and develop a comprehensive Business Continuity and Disaster Recovery (BCDR) strategy.
+
+## Prerequisites
+- 🔑 Azure Subscription
+- 🛠️ Azure Developer CLI installed
+- 📚 Basic knowledge of Azure services
+
+## Steps
+
+## Table of Contents
+- [**Architecting on Azure - Hack Introduction**](#hack-introduction)
+- **Architect an N-tier App - Hack Challenges**
+    - [General Prerequisites & Setup](./walkthrough/00_challenge)
+    - [Challenge 0 - Deploy the Resources and Application using Azure Copilot](./walkthrough/01_challenge)
+    - [Challenge 1 - Calculate Composite SLAs with Azure Copilot](./walkthrough/02_challenge)
+    - [Challenge 2 - Enhance Monitoring with Azure Copilot](./walkthrough/03_challenge)
+    - [Challenge 3 - Simulate Failures/Load Testing with Azure Chaos Studio](./walkthrough/04_challenge)
+    - [Challenge 4 - Develop BCDR and Monitoring Strategy](./walkthrough/05_challenge)
+
+## MicroHack Introduction
+
+## N-tier Application
+
+![System Architecture Overview](./img/resources0.png)
+
+### Business Continuity and Disaster Recovery (BCDR) Strategy
+Develop a BCDR strategy to ensure your application can recover from failures and continue operating during disasters.
+
+- **🔄 Backup and Restore**: Regularly backup your data and test the restore process.
+- **🔀 Failover**: Implement failover mechanisms to switch to a secondary system in case of primary system failure.
+- **📄 Disaster Recovery Plan**: Document and test your disaster recovery plan regularly.
+
+## Conclusion
+By following this guide, you have successfully deployed a ready-to-go N-tier application using the Awesome Azure Developer CLI and Azure Copilot, calculated composite SLAs, enhanced monitoring with alerts, logging, and Kusto queries, simulated failures/load testing with Azure Chaos Studio, and developed a comprehensive BCDR strategy.
+
+## References
+- [📄 Azure Developer CLI Documentation](https://docs.microsoft.com/en-us/azure/developer/cli/)
+- [📄 Azure Copilot Documentation](https://docs.microsoft.com/en-us/azure/copilot/)
+- [📄 Azure Chaos Studio Documentation](https://docs.microsoft.com/en-us/azure/chaos-studio/)
+- [📄 BCDR Strategy Documentation](https://docs.microsoft.com/en-us/azure/architecture/resiliency/)
