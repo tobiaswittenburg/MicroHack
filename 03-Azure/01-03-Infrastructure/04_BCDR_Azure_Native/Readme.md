@@ -32,29 +32,26 @@ The following picture describes in details the individual levels / disaster reco
 
 ![image](./img/drcontinuum.png)
 
-## MicroHack context
+## MicroHack Context
 
 This MicroHack scenario walks through the use of building a Business Continuity Strategy with a focus on best practices and the design principles, as well as some interesting challenges for real world scenarios. Specifically, it builds up to include working with an existing infrastructure in your datacenter.
 
-Further resources: 
-
+📚 Further resources: 
 * [Azure Business Continuity & Disaster Recovery](https://learn.microsoft.com/en-us/azure/site-recovery/site-recovery-overview#what-does-site-recovery-provide)
 * [How does Microsoft ensure business continuity](https://learn.microsoft.com/en-us/compliance/assurance/assurance-resiliency-and-continuity)
 * [Common questions about Azure Site Recovery](https://learn.microsoft.com/en-us/azure/site-recovery/site-recovery-faq)
 
 💡 Optional: Once you’ve completed this lab, consider reading the following material to further enhance your understanding!
-
 * [Overview of the reliability pillar](https://learn.microsoft.com/en-us/azure/architecture/framework/resiliency/overview)
-* [Whitepaper - Resiliency in Azure ](https://azure.microsoft.com/en-us/resources/resilience-in-azure-whitepaper/)
+* [Whitepaper - Resiliency in Azure](https://azure.microsoft.com/en-us/resources/resilience-in-azure-whitepaper/)
 
 
-## Objectives
+## 🎯 Objectives
 
-After completing this MicroHack you will:
-
-* Know how to use the right business continuity strategy for your infrastructure or your particular workload.
+After completing this MicroHack, you will:
+* Know how to use the right business continuity strategy for your infrastructure or particular workload.
 * Understand use cases and possible scenarios in your own business continuity & disaster recovery strategy.
-* Get insights into real world challenges and scenarios.
+* Gain insights into real-world challenges and scenarios.
 
 ## MicroHack Challenges
 
@@ -111,23 +108,24 @@ The goal from this challenge is to help you comprehend the complexities of busin
 
 ### Goal
 
-In challenge 1, you will understand and prepare your environment with the needed infrastructure to enable business continuity with Cloud Native / PaaS Services on Azure.
+In Challenge 1, you will understand and prepare your environment with the necessary infrastructure to enable business continuity using Cloud Native / PaaS Services on Azure.
 
 ### Actions
 
-Create all necessary Azure resources
-* Region 1: Germany West Central (Source enviroment)
-  * Resource Group: mh-bcdr-gwc-rg<your assigned number>
-  * Recovery Services Vault: mh-rsv-gwc
-  * Storage Account with GRS (geo-redundant storage) redundancy option: mhstweu\<Suffix\>
-* Region 2: Sweden Central (Target environment)
-  * Resource Group: mh-bcdr-sc-rg<your assigned number>
-  * Recovery Services Vault: mh-rsv-sc
+Create all necessary Azure resources:
 
+#### Region 1: North Europe (Source Environment)
+* Resource Group: `mh-bcdr-neu-rg`
+* Recovery Services Vault: `mh-rsv-neu`
+* Storage Account: `mhstneu` with `GRS (geo-redundant storage)` redundancy option
 
-### Success criteria
+#### Region 2: Sweden Central (Target Environment)
+* Resource Group: `mh-bcdr-sc-rg`
+* Recovery Services Vault: `mh-rsv-sc`
 
-* You've created Resource Groups in both regions (Germany West Central & Sweden Central).
+### ✅ Success Criteria
+
+* You've created Resource Groups in both regions (North Europe & Sweden Central).
 * Recovery Services Vaults have been created in both regions.
 * A geo-redundant Storage Account has been created.
 
@@ -146,16 +144,16 @@ Create all necessary Azure resources
 
 ### Goal
 
-In challenge 2, you will successfully onboard your Windows and Linux Virtual Machines to a centralized Recovery Services Vault and leverage Azure Backup Center to Protect with Backup in Azure. 
+In Challenge 2, you will onboard your Windows and Linux Virtual Machines to a centralized Recovery Services Vault and leverage Azure Backup Center to protect with Backup in Azure.
 
 ### Actions
 
-* Deploy a Windows Server 2022 VM in Germany West Central Resource Group. Please use the "Data Science Virtual Machine - Windows 2022" image from the market place.
-> **Note:** The 'Data Science Virtual Machine (DSVM)' is a 'Windows Server 2022 with Containers' VM that has several popular tools for data exploration, analysis, modeling & development pre installed.
-> You will to use Microsoft SQL Server Management Studio to connect to the database and Storage Explorer to the storage Account.
-* Deploy a Ubuntu Server VM in Sweden Central Resource Group.
-* Deploy a azure SQL database server with a database containing the sample data of AdventureWorksLT.
-* From the Data Science Windows Server VM, connect to the database  and to the storage account.
+* Deploy a Windows Server 2022 VM in `North Europe` Resource Group. Please use the `Data Science Virtual Machine - Windows 2022` image from the marketplace.
+  > **Note:** The 'Data Science Virtual Machine (DSVM)' is a 'Windows Server 2022 with Containers' VM that has several popular tools for data exploration, analysis, modeling & development pre-installed.
+  > You will need to use Microsoft SQL Server Management Studio to connect to the database and Storage Explorer to access the Storage Account.
+* Deploy an `Ubuntu Server VM` in `Sweden Central` Resource Group.
+* Deploy an `Azure SQL database server` with a database containing the sample data of `AdventureWorksLT`.
+* From the Data Science Windows Server VM, connect to the database and the storage account.
 * Create a blob container and upload a sample file to it.
 * Enable Azure Backup for both VMs.
 * Enable Azure Backup for blobs on the storage account.
@@ -163,26 +161,26 @@ In challenge 2, you will successfully onboard your Windows and Linux Virtual Mac
 * Delete and restore the sample blob file.
 
 
-### Success criteria
+### ✅ Success Criteria
 
-* You have deployed two VMs in Azure (one with Window Server 2022, the other one with Ubuntu Server).
-* You have deployed a azure SQL database with sample data (AdventureWorksLT) and can access the database for the Windows Server (Data Science Edition).
+* You have deployed two VMs in Azure (one with Windows Server 2022, the other one with Ubuntu Server).
+* You have deployed an Azure SQL database with sample data (AdventureWorksLT) and can access the database from the Windows Server (Data Science Edition).
 * You successfully connected to the database and the storage account from the Windows Server.
-* You successfully enabled Azure Backup on the two virtual machines.
-* You have successfully setup Azure Backup Policies for both virtual machines.
-* You successfully enabled Azure Backup for blob.
+* You have successfully enabled Azure Backup on the two virtual machines.
+* You have successfully set up Azure Backup Policies for both virtual machines.
+* You successfully enabled Azure Backup for blobs.
 * You have successfully restored a VM of your choice to Azure.
 * You have successfully restored blobs.
 
 ### Learning resources
 
-* https://learn.microsoft.com/en-us/azure/azure-sql/database/single-database-create-quickstart?view=azuresql&tabs=azure-portal
-* https://learn.microsoft.com/en-us/azure/backup/quick-backup-vm-portal
-* https://learn.microsoft.com/en-us/azure/backup/quick-backup-vm-portal#apply-a-backup-policy
-* https://learn.microsoft.com/en-us/azure/backup/tutorial-backup-vm-at-scale
-* https://learn.microsoft.com/en-us/azure/backup/backup-azure-arm-restore-vms
-* https://learn.microsoft.com/en-us/azure/backup/restore-azure-encrypted-virtual-machines
-* https://learn.microsoft.com/en-us/azure/backup/blob-backup-overview
+* [Create a single database in Azure SQL Database](https://learn.microsoft.com/en-us/azure/azure-sql/database/single-database-create-quickstart?view=azuresql&tabs=azure-portal)
+* [Back up a VM in Azure](https://learn.microsoft.com/en-us/azure/backup/quick-backup-vm-portal)
+* [Apply a backup policy](https://learn.microsoft.com/en-us/azure/backup/quick-backup-vm-portal#apply-a-backup-policy)
+* [Back up VMs at scale](https://learn.microsoft.com/en-us/azure/backup/tutorial-backup-vm-at-scale)
+* [Restore a VM in Azure](https://learn.microsoft.com/en-us/azure/backup/backup-azure-arm-restore-vms)
+* [Restore encrypted virtual machines in Azure](https://learn.microsoft.com/en-us/azure/backup/restore-azure-encrypted-virtual-machines)
+* [Blob backup overview](https://learn.microsoft.com/en-us/azure/backup/blob-backup-overview)
 
 ### Solution - Spoilerwarning
 
@@ -192,26 +190,26 @@ In challenge 2, you will successfully onboard your Windows and Linux Virtual Mac
 
 ### Goal
 
-In Challenge 3, you will learn how to protect Azure VM with Azure Site Recovery, and how to enable replication to the secondary site. In addition you will successfully run the test & production failover from Germany West Central to Sweden Central, and failback again from Sweden to Germany.
+In Challenge 3, you will learn how to protect Azure VM with Azure Site Recovery, and how to enable replication to the secondary site. In addition you will successfully run the test & production failover from North Europe to Sweden Central, and failback again from Sweden to Germany.
 
 ### Actions
 
 * Set up and enable disaster recovery with Azure Site Recovery and monitor the progress.
 * Perform a disaster recovery drill, create recovery plan and run a test failover.
-* Run a production failover from Germany West Central to Sweden Central and monitor the progress.
+* Run a production failover from ``North Europe`` Region to ``Sweden Central`` Region and monitor the progress.
 
-### Success Criteria
+### ✅ Success Criteria
 
 * You enabled the replication for the virtual machine to the Sweden Central region.
-* You successfully initiated a Testfailover from Azure Region Germany West Central to Sweden Central with a near zero downtime requirement.
-* You ran successfully the production failover to the Sweden Central region.
+* You successfully initiated a test failover from Azure Region North Europe to Sweden Central with a near-zero downtime requirement.
+* You successfully ran the production failover to the Sweden Central region.
 
 
 ### Learning resources
 
-* https://learn.microsoft.com/en-us/azure/site-recovery/azure-to-azure-how-to-enable-replication
-* https://learn.microsoft.com/en-us/azure/site-recovery/site-recovery-create-recovery-plans
-* https://learn.microsoft.com/en-us/azure/site-recovery/site-recovery-test-failover-to-azure
+* [Enable replication for Azure VMs](https://learn.microsoft.com/en-us/azure/site-recovery/azure-to-azure-how-to-enable-replication)
+* [Create recovery plans](https://learn.microsoft.com/en-us/azure/site-recovery/site-recovery-create-recovery-plans)
+* [Test failover to Azure](https://learn.microsoft.com/en-us/azure/site-recovery/site-recovery-test-failover-to-azure)
 
 
 ### Solution - Spoilerwarning
@@ -226,13 +224,14 @@ In challenge 4, you will focus on implementing disaster recovery strategies for 
 
 ### Actions
 * Implement Failover Groups for Azure SQL Database:
-  * Create a Failover Group between two Azure SQL databases located in different Azure regions (Germany West central and Sweden Central).
+  * Create a Failover Group between two Azure SQL databases located in different Azure regions (North Europe and Sweden Central).
   * Configure automatic failover policies and test the failover mechanism to ensure seamless transition in case of a disaster.
 * Disaster Recovery for Azure Storage Account:
   * Set up and configure Azure Storage Account replication to another region using Geo-redundant storage (GRS) or Geo-zone-redundant storage (GZRS) to ensure data availability in case of regional outages.
   * Perform a failover test for the storage account to validate the disaster recovery setup.
 
-### Success Criteria
+### ✅ Success Criteria
+
 * You have successfully created and configured a Failover Group for Azure SQL Database, ensuring data is replicated and accessible across regions.
 * You have implemented disaster recovery for an Azure Storage Account using GRS or GZRS, protecting against regional outages.
 * You have conducted failover tests for both the Azure SQL Database and Azure Storage Account, demonstrating the effectiveness of your disaster recovery strategy.
@@ -248,21 +247,21 @@ In challenge 4, you will focus on implementing disaster recovery strategies for 
 
 [Solution Steps](./walkthrough/challenge-4/solution.md)
 
-## Challenge 5 -Failback to the primary region (Germany West Central)
+## Challenge 5 -Failback to the primary region (North Europe)
 
 ### Goal
 
-In challenge 5, you will failback again the VM, SQL DB from Sweden central to Germany West Central. The storage account should be failed back as well to Germany West Central.
+In challenge 5, you will failback again the VM, SQL DB from Sweden central to North Europe. The storage account should be failed back as well to North Europe.
 
 ### Actions
 
-* Failback the VM from Sweden Central to Germany West Central region (Source environment) and monitor the progress.
-* Failback Azure SQL DB to Germany West Central.
-* Failback Storage Account to Germany West Central.
+* Failback the VM from Sweden Central to North Europe region (Source environment) and monitor the progress.
+* Failback Azure SQL DB to North Europe.
+* Failback Storage Account to North Europe.
 
-### Success Criteria
+### ✅ Success Criteria
 
-* The failback of all resources to the Germany West Central region has been successfully performed.
+* The failback of all resources to the North Europe region has been successfully performed.
 
 ### Learning resources
 * https://learn.microsoft.com/en-us/azure/site-recovery/azure-to-azure-how-to-reprotect
