@@ -19,13 +19,15 @@ Before you begin, ensure you have the following:
 - Basic knowledge of Azure services
 - Access to Azure Portal
 
-## Microsoft Copilot in Azure
+## 
 
-![image](./img/azure_copilot.png)
+<img src="./img/azure_copilot.png" alt="Azure Copilot" width="600">
 
-![image](./img/azure_copilot_bar.png)
+Azure Copilot is a new tool that helps you manage and optimize your Azure resources with the help of AI.
 
-Azure Copilot is a new tool that helps you manage and optimize your Azure resources with the help of AI. In this section, you will:
+<img src="./img/azure_copilot_bar.png" alt="Azure Copilot Bar" width="600">
+
+In this section, you will:
 - Learn how to set up and configure Azure Copilot
 - Explore key features and capabilities
 - Understand how to use Azure Copilot for resource management and optimization
@@ -34,23 +36,15 @@ Azure Copilot is a new tool that helps you manage and optimize your Azure resour
 - [What is Microsoft Copilot in Azure?](https://learn.microsoft.com/en-us/azure/copilot/overview)
 - [📄 Microsoft Copilot in Azure - Documentation](https://docs.microsoft.com/en-us/azure/copilot/)
 
-## Azure Chaos Studio
+## 
 
-![image](./img/azure_chaos_studio.png)
+<img src="./img/azure_chaos_studio.png" alt="Azure Chaos Studio" width="600">
 
 Azure Chaos Studio is a tool that allows you to simulate various failure scenarios in your Azure environment. This helps you to identify potential weaknesses and improve the resilience of your applications. In this section, participants will learn how to use Azure Chaos Studio to create and run experiments that simulate different types of failures. Additionally, you will set up notifications to monitor and respond to these failures effectively.
 
 ### References
 - [What is Azure Chaos Studio?](https://learn.microsoft.com/en-us/azure/chaos-studio/chaos-studio-overview)
 - [📄 Azure Chaos Studio - Documentation](https://learn.microsoft.com/en-us/azure/chaos-studio/)
-
-### Agenda:
-- **Challenge 0: Getting Started**: Introduction to Azure Chaos Studio and initial setup.
-- **Challenge 1: Set Up Notifications**: Configure notifications to alert you when failures occur.
-- **Challenge 2: Simulate VM Failure**: Learn how to simulate a virtual machine failure and observe the impact.
-- **Challenge 3: Simulate Network Latency**: Understand how to introduce network latency and measure its effects on your applications.
-- **Challenge 4: Simulate Resource Pressure**: Simulate resource constraints to test the robustness of your applications under pressure.
-- **Challenge 5: Analyze and Improve**: Analyze the results of your experiments and identify areas for improvement.
 
 ## Monitoring
 
@@ -71,6 +65,17 @@ BCDR is essential for maintaining the availability and integrity of your data. I
 - Explore Azure services that support BCDR, such as Azure Site Recovery and Azure Backup
 
 ## Challenges
+
+## Table of Contents
+- [**Architecting on Azure - Hack Introduction**](#hack-introduction)
+- **Architect an N-tier App - Hack Challenges**
+    - [General Prerequisites & Setup](./walkthrough/00_challenge)
+    - [Challenge 0 - Deploy the Resources and Application using Azure Copilot](./walkthrough/00_challenge)
+    - [Challenge 1 - Calculate Composite SLAs with Azure Copilot](./walkthrough/01_challenge)
+    - [Challenge 2 - Enhance Monitoring with Azure Copilot](./walkthrough/02_challenge)
+    - [Challenge 3 - Simulate Failures/Load Testing with Azure Chaos Studio](./walkthrough/03_challenge)
+    - [Challenge 4 - Develop BCDR and Monitoring Strategy](./walkthrough/04_challenge)
+
 By the end of this MicroHack, you will have a solid understanding of how to use Azure Copilot, implement Business Continuity and Disaster Recovery strategies, and set up effective monitoring for your Azure resources. This knowledge will help you manage your Azure environment more efficiently and ensure the resilience and performance of your applications.
 
 Happy hacking!
