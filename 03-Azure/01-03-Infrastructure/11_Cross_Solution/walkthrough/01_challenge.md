@@ -1,4 +1,4 @@
-## 1. Calculate Composite SLAs with Azure Copilot
+## Challenge 1 - Calculate Composite SLAs with Azure Copilot
 
 We will cover how to calculate composite SLAs, enhance monitoring with alerts, logging, and Kusto queries.
 
@@ -12,41 +12,42 @@ We will cover how to calculate composite SLAs, enhance monitoring with alerts, l
 
 ```
 What are the SLAs for my Azure resources?
+```
 
-How do I calculate the composite SLA for my application?
-
-Can you provide an example of composite SLA calculation?
-
+```
 Can you show me the SLAs for Azure App Service?
 ```
 
-## 2. Explore and Set Alerts with Copilot
+<details close>
+<summary>💡 Hint: Use the SLAs</summary>
+<br>
+
+Find the latest SLA provided by Microsoft in [Service Level Agreements (SLA) for Online Services](https://www.microsoft.com/licensing/docs/view/Service-Level-Agreements-SLA-for-Online-Services?lang=1&year=2024).
+
+</details>
 
 ### Example Prompts
 
 ```
-Show me Azure Monitor active alerts.
+How do I calculate the composite SLA for my application?
+
+Can you provide an example of composite SLA calculation?
 ```
 
-```
-How do I create an alert in Azure Monitor?
-```
+<details close>
+<summary>💡 Hint: Composite SLA Calculation</summary>
+<br>
 
-## 3. Create Kusto Queries for Monitoring
+1. Identify the Azure services (components) that are connected.
+2. Determine the chains of components within the application.
+3. Use the latest SLA provided by Microsoft in [Service Level Agreements (SLA) for Online Services](https://www.microsoft.com/licensing/docs/view/Service-Level-Agreements-SLA-for-Online-Services?lang=1&year=2024) to find the SLA for each component in the chain.
+4. Multiply the SLA values of each individual component (link) in the chain to get the composite SLA for that chain.
+5. Identify the weakest link – the component/composites with the lowest SLA.
 
-Create Kusto queries to monitor the performance and health of your application.
-
-```kusto
-// Example Kusto query
-AppRequests
-| where Timestamp > ago(1h)
-| summarize count() by bin(Timestamp, 5m)
-```
+</details>
 
 ---
 
-**[> Next Challenge 2 - Simulate Failures/Load Testing with Azure Chaos Studio](./02_challenge)** |
+**[> Next Challenge 2 - Enhance Monitoring with Azure Copilot](./02_challenge.md)** |
 
-**[< Previous Challenge 0 - 🚀 Deploying a Ready-to-Go N-tier App with Awesome Azure Developer CLI](./00_challenge)** 
-
-| 
+**[< Previous Challenge 0 - 🚀 Deploying a Ready-to-Go N-tier App with Awesome Azure Developer CLI](./00_challenge.md)** 

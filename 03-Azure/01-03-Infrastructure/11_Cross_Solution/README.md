@@ -66,16 +66,19 @@ BCDR is essential for maintaining the availability and integrity of your data. I
 
 ## Challenges
 
-## Table of Contents
+### Table of Contents
 - [**Architecting on Azure - Hack Introduction**](#hack-introduction)
 - **Architect an N-tier App - Hack Challenges**
     - [General Prerequisites & Setup](./walkthrough/00_challenge)
-    - [Challenge 0 - Deploy the Resources and Application using Azure Copilot](./walkthrough/00_challenge)
-    - [Challenge 1 - Calculate Composite SLAs with Azure Copilot](./walkthrough/01_challenge)
-    - [Challenge 2 - Enhance Monitoring with Azure Copilot](./walkthrough/02_challenge)
-    - [Challenge 3 - Simulate Failures/Load Testing with Azure Chaos Studio](./walkthrough/03_challenge)
-    - [Challenge 4 - Develop BCDR and Monitoring Strategy](./walkthrough/04_challenge)
+    - [Challenge 0 - Deploy the Resources and Application using Azure Copilot](./walkthrough/00_challenge.md)
+    - [Challenge 1 - Calculate Composite SLAs with Azure Copilot](./walkthrough/01_challenge.md)
+    - [Challenge 2 - Enhance Monitoring with Azure Copilot](./walkthrough/02_challenge.md)
+    - [Challenge 3 - Simulate Failures/Load Testing with Azure Chaos Studio](./walkthrough/03_challenge.md)
+    - [Challenge 4 - Develop BCDR and Monitoring Strategy](./walkthrough/04_challenge.md)
+    - [Challenge 5 - xxx](./walkthrough/05_challenge.md)
 
-By the end of this MicroHack, you will have a solid understanding of how to use Azure Copilot, implement Business Continuity and Disaster Recovery strategies, and set up effective monitoring for your Azure resources. This knowledge will help you manage your Azure environment more efficiently and ensure the resilience and performance of your applications.
+By the end of this MicroHack, you'll be equipped with the skills to harness Azure Copilot, implement robust Business Continuity and Disaster Recovery strategies, and establish comprehensive monitoring for your Azure resources. This will empower you to manage your Azure environment more effectively, ensuring your applications are resilient and perform optimally.
+
+Let's get started with the **[challenges](./walkthrough/00_challenge.md)** and dive into the world of Azure!
 
 Happy hacking!
