@@ -1,43 +1,76 @@
-# 🚀 Deploying a Ready-to-Go N-tier App with Awesome Azure Developer CLI
+# MicroHack: AI-powered Hack - Business Continuity and Disaster Recovery, and Monitoring
 
-## Introduction
-This guide will walk you through deploying a ready-to-go N-tier application using the Awesome Azure Developer CLI and Azure Copilot. We will cover how to calculate composite SLAs, enhance monitoring with alerts, logging, and Kusto queries, simulate failures/load testing with Azure Chaos Studio, and develop a comprehensive Business Continuity and Disaster Recovery (BCDR) strategy.
-
-## Prerequisites
-- 🔑 Azure Subscription
-- 🛠️ Azure Developer CLI installed
-- 📚 Basic knowledge of Azure services
-
-## Steps
+Welcome to the MicroHack! This MicroHack is designed to help you understand and implement three critical aspects/tools in Azure: Azure Copilot, Business Continuity and Disaster Recovery (BCDR), and Monitoring.
 
 ## Table of Contents
-- [**Architecting on Azure - Hack Introduction**](#hack-introduction)
-- **Architect an N-tier App - Hack Challenges**
-    - [General Prerequisites & Setup](./walkthrough/00_challenge)
-    - [Challenge 0 - Deploy the Resources and Application using Azure Copilot](./walkthrough/01_challenge)
-    - [Challenge 1 - Calculate Composite SLAs with Azure Copilot](./walkthrough/02_challenge)
-    - [Challenge 2 - Enhance Monitoring with Azure Copilot](./walkthrough/03_challenge)
-    - [Challenge 3 - Simulate Failures/Load Testing with Azure Chaos Studio](./walkthrough/04_challenge)
-    - [Challenge 4 - Develop BCDR and Monitoring Strategy](./walkthrough/05_challenge)
+1. [Introduction](#introduction)
+2. [Prerequisites](#prerequisites)
+3. [Azure Copilot](#azure-copilot)
+4. [Business Continuity and Disaster Recovery (BCDR)](#business-continuity-and-disaster-recovery-bcdr)
+5. [Monitoring](#monitoring)
+6. [Challenges](#challenges)
 
-## MicroHack Introduction
+## Introduction
+In this MicroHack, you will learn how to leverage Azure Copilot for cloud management, implement Business Continuity and Disaster Recovery strategies to ensure data resilience, and set up Monitoring to maintain the health and performance of your applications.
 
-## N-tier Application
+## Prerequisites
+Before you begin, ensure you have the following:
+- An active Azure subscription
+- Basic knowledge of Azure services
+- Access to Azure Portal
 
-![System Architecture Overview](./img/resources0.png)
+## Microsoft Copilot in Azure
 
-### Business Continuity and Disaster Recovery (BCDR) Strategy
-Develop a BCDR strategy to ensure your application can recover from failures and continue operating during disasters.
+![image](./img/azure_copilot.png)
 
-- **🔄 Backup and Restore**: Regularly backup your data and test the restore process.
-- **🔀 Failover**: Implement failover mechanisms to switch to a secondary system in case of primary system failure.
-- **📄 Disaster Recovery Plan**: Document and test your disaster recovery plan regularly.
+![image](./img/azure_copilot_bar.png)
 
-## Conclusion
-By following this guide, you have successfully deployed a ready-to-go N-tier application using the Awesome Azure Developer CLI and Azure Copilot, calculated composite SLAs, enhanced monitoring with alerts, logging, and Kusto queries, simulated failures/load testing with Azure Chaos Studio, and developed a comprehensive BCDR strategy.
+Azure Copilot is a new tool that helps you manage and optimize your Azure resources with the help of AI. In this section, you will:
+- Learn how to set up and configure Azure Copilot
+- Explore key features and capabilities
+- Understand how to use Azure Copilot for resource management and optimization
 
-## References
-- [📄 Azure Developer CLI Documentation](https://docs.microsoft.com/en-us/azure/developer/cli/)
-- [📄 Azure Copilot Documentation](https://docs.microsoft.com/en-us/azure/copilot/)
-- [📄 Azure Chaos Studio Documentation](https://docs.microsoft.com/en-us/azure/chaos-studio/)
-- [📄 BCDR Strategy Documentation](https://docs.microsoft.com/en-us/azure/architecture/resiliency/)
+### References
+- [What is Microsoft Copilot in Azure?](https://learn.microsoft.com/en-us/azure/copilot/overview)
+- [📄 Microsoft Copilot in Azure - Documentation](https://docs.microsoft.com/en-us/azure/copilot/)
+
+## Azure Chaos Studio
+
+![image](./img/azure_chaos_studio.png)
+
+Azure Chaos Studio is a tool that allows you to simulate various failure scenarios in your Azure environment. This helps you to identify potential weaknesses and improve the resilience of your applications. In this section, participants will learn how to use Azure Chaos Studio to create and run experiments that simulate different types of failures. Additionally, you will set up notifications to monitor and respond to these failures effectively.
+
+### References
+- [What is Azure Chaos Studio?](https://learn.microsoft.com/en-us/azure/chaos-studio/chaos-studio-overview)
+- [📄 Azure Chaos Studio - Documentation](https://learn.microsoft.com/en-us/azure/chaos-studio/)
+
+### Agenda:
+- **Challenge 0: Getting Started**: Introduction to Azure Chaos Studio and initial setup.
+- **Challenge 1: Set Up Notifications**: Configure notifications to alert you when failures occur.
+- **Challenge 2: Simulate VM Failure**: Learn how to simulate a virtual machine failure and observe the impact.
+- **Challenge 3: Simulate Network Latency**: Understand how to introduce network latency and measure its effects on your applications.
+- **Challenge 4: Simulate Resource Pressure**: Simulate resource constraints to test the robustness of your applications under pressure.
+- **Challenge 5: Analyze and Improve**: Analyze the results of your experiments and identify areas for improvement.
+
+## Monitoring
+
+![image](./img/1920x300_EventBanner_MicroHack_Monitor_wText.jpg)
+
+Monitoring is crucial for ensuring the performance and reliability of your applications. In this section, you will:
+- Learn how to set up monitoring for your Azure resources
+- Explore Azure Monitor and its features
+- Understand how to use monitoring data to troubleshoot and optimize your applications
+
+## Business Continuity and Disaster Recovery (BCDR)
+
+![image](./img/1920x300_EventBanner_MicroHack_BusinessContinuity_wText.jpg)
+
+BCDR is essential for maintaining the availability and integrity of your data. In this section, you will:
+- Understand the principles of Business Continuity and Disaster Recovery
+- Learn how to implement BCDR strategies in Azure
+- Explore Azure services that support BCDR, such as Azure Site Recovery and Azure Backup
+
+## Challenges
+By the end of this MicroHack, you will have a solid understanding of how to use Azure Copilot, implement Business Continuity and Disaster Recovery strategies, and set up effective monitoring for your Azure resources. This knowledge will help you manage your Azure environment more efficiently and ensure the resilience and performance of your applications.
+
+Happy hacking!
