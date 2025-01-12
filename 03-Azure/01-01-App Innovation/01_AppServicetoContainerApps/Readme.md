@@ -47,13 +47,13 @@ This MicroHack has a few but important prerequisites to be understood before sta
 
 You need to execute this script in the Azure Cloud Shell to deploy the initial App Service resource that we will start with in a resource group named "MicroHack-AppServiceToContainerApp"
 
-`az group create --name "MicroHack-AppServiceToContainerApp" --location "westeurope"`
+```az group create --name "MicroHack-AppServiceToContainerApp" --location "westeurope"```
 
-`az appservice plan create --name "microhack-appserviceplan" --resource-group "MicroHack-AppServiceToContainerApp" --location "westeurope" --is-linux --sku "FREE"`
+```az appservice plan create --name "microhack-appserviceplan" --resource-group "MicroHack-AppServiceToContainerApp" --location "westeurope" --is-linux --sku "FREE"```
 
 To create the web app, you need to run this command. Web app names must be globally unique, since the name will be used in the URL. You can name the web app something like "microhack-webapp-" and then append a name or some random characters, e.g. "microhack-webapp-johndoe22" or "microhack-webapp-jdkas":
 
-`az webapp create --name "<your_globally_unique_webapp_name>" --resource-group "MicroHack-AppServiceToContainerApp" --plan "microhack-appserviceplan" --runtime "DOTNETCORE:8.0" --deployment-source-url "https://github.com/ArneDecker3v08mk/MicroHack-AppServiceToContainerAppStart" --deployment-source-branch "main"`
+```az webapp create --name "<your_globally_unique_webapp_name>" --resource-group "MicroHack-AppServiceToContainerApp" --plan "microhack-appserviceplan" --runtime "DOTNETCORE:8.0" --deployment-source-url "https://github.com/ArneDecker3v08mk/MicroHack-AppServiceToContainerAppStart" --deployment-source-branch "main"```
 
  **Troubleshooting:**
  If you see this error, then the name of the web app was already used and you need to try another name:
